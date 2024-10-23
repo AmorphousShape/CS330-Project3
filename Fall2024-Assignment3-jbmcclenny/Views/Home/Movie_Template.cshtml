@@ -30,7 +30,7 @@
             <p class="general-sentiment">@Model.GeneralSentiment</p>
         </li>
 
-        @foreach (var review in Model.Reviews)
+        @foreach (var review in Model.ReviewsList)
         {
             <li>
                 <h3>@review.Author</h3>
