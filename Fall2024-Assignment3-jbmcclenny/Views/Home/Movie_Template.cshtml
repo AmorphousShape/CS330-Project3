@@ -1,0 +1,41 @@
+﻿@model Fall2024_Assignment3_jbmcclenny.Models.MovieModel
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h1 class="movie-title">@Model.MovieTitle</h1>
+
+    <img class="poster" src="@Model.PosterUrl" alt="Movie Poster"></img>
+
+    <a class="imdb-link" href="@Model.ImdbLink">IMDB</a>
+
+    <ul>
+        <li>
+            <h2>Genre</h2><br>
+            <p class="genre">@Model.Genre</p>
+        </li>
+        <li>
+            <h2>Release Year</h2><br>
+            <p class="release-year">@Model.ReleaseYear</p>
+        </li>
+    </ul>
+
+    <h2>Reviews</h2>
+    <ul>
+        <li>
+            <h3>General Sentiment</h3>
+            <p class="general-sentiment">@Model.GeneralSentiment</p>
+        </li>
+
+        @foreach (var review in Model.Reviews)
+        {
+            <li>
+                <h3>@review.Author</h3>
+                <p class="review">@review.Review</p>
+            </li>
+        }
+    </ul>
+</div>

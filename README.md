@@ -1,7 +1,7 @@
 ## CS 330 (Web Development) Project 3
 
 ### Assignment Details
-Create a Bing Search API using your Microsoft Azure account and use it to construct a simple web search site.<br>
+Create and publish a website dedicated to managing movies and actors that has AI write reviews for the movies and comments about the actors.<br>
 
 The project must include the following:
 

@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Actor-Template";
+}
+
+<div>
+    <h1 class="name">@Model.ActorName</h1>
+
+    <img class="headshot" src="@Model.HeadshotUrl" alt="Actor Headshot"></img>
+
+    <ul>
+        <li>
+            <h3>Gender</h2>
+            <p class="gender">@Model.Gender</p>
+        </li>
+
+        <li>
+            <h3>Age</h2>
+            <p class="age">@Model.Age</p>
+        </li>
+    </ul>
+
+    <h2>Movies:</h2>
+    <ul>
+        @foreach (var movie in Model.Movies)
+        {
+            <li>
+                <h3>@movie.MovieTitle</h3>
+                <p class="role">@movie.Role</p>
+            </li>
+        }
+    </ul>
+
+    <h2>Related Tweets</h2>
+
+    <h3>Twitter Sentiment Analysis</h3>
+    <p class="twitter-sentiment">@Model.TwitterSentiment</p>
+
+    <ul>
+        @foreach (var tweet in Model.Tweets)
+        {
+            <li>
+                <h3>@tweet.Author</h3>
+                <p class="tweet">@tweet.Tweet</p>
+            </li>
+        }
+
+        <li>
+            <h3>General Sentiment</h3>
+            <p class="general-sentiment">@Model.GeneralSentiment</p>
+        </li>
+    </ul>
+
+</div>
