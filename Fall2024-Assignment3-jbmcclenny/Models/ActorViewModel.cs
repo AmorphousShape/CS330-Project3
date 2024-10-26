@@ -14,6 +14,6 @@ namespace Fall2024_Assignment3_jbmcclenny.Models {
             public required string Tweet { get; set; }
             public required string Author { get; set; }
         }   
-
+        public required List<TweetModel> Tweets { get; set; }
     }
 }

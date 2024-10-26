@@ -1,6 +1,15 @@
+@model Fall2024_Assignment3_jbmcclenny.Models.ActorViewModel
+
 @{
     ViewData["Title"] = "Actor-Template";
+    var referer = Context.Request.Headers["Referer"].ToString();
+    var defaultUrl = "/Home/Index.cshtml";
 }
+
+<!-- Go to previous page (defaults to index if not available) -->
+<header>
+    <a href="@(!string.IsNullOrEmpty(referer) ? referer : defaultUrl)" class="back-link">Back</a>
+</header>
 
 <div>
     <h1 class="name">@Model.ActorName</h1>

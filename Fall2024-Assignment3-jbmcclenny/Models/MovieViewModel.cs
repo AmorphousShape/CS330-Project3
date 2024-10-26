@@ -1,6 +1,6 @@
 namespace Fall2024_Assignment3_jbmcclenny.Models
 {
-public class MovieModel
+public class MovieViewModel
     {
         public required string Title { get; set; }
         public required string MovieTitle { get; set; }
