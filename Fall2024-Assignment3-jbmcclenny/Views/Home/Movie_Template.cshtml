@@ -1,12 +1,12 @@
 ﻿@model Fall2024_Assignment3_jbmcclenny.Models.MovieViewModel
 
 @{
-    ViewData["Title"] = Model.Title;
+    ViewData["Title"] = Model.Name;
 }
 <h1>@ViewData["Title"]</h1>
 
 <div>
-    <h1 class="movie-title">@Model.MovieTitle</h1>
+    <h1 class="movie-title">@Model.Name</h1>
 
     <img class="poster" src="@Model.PosterUrl" alt="Movie Poster"></img>
 

@@ -6,20 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Configure authentication
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.LoginPath = "/Admin/Login";
-        options.AccessDeniedPath = "/Admin/AccessDenied";
-    });
-
-// Configure authorization
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
-});
-
 // Add database context
 var connectionString = Environment.GetEnvironmentVariable("SQL_CONNECTION_STRING");
 builder.Services.AddDbContext<Fall2024_Assignment3_jbmcclenny.Data.ApplicationDbContext>(options => options.UseSqlServer(connectionString));

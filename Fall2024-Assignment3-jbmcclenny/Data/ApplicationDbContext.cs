@@ -9,8 +9,7 @@ namespace Fall2024_Assignment3_jbmcclenny.Data
             : base(options)
         {
         }
-
-        public DbSet<ActorViewModel> Actors { get; set; }
-        public DbSet<MovieViewModel> Movies { get; set; }
+        public DbSet<MovieViewModel> Movie { get; set; } = default!;
+        public DbSet<ActorViewModel> Actor { get; set; } = default!;
     }
 }

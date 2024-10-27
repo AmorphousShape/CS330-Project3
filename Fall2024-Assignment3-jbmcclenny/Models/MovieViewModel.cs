@@ -1,9 +1,12 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Fall2024_Assignment3_jbmcclenny.Models
 {
 public class MovieViewModel
     {
-        public required string Title { get; set; }
-        public required string MovieTitle { get; set; }
+        [Key]
+        public required int Id { get; set; }
+        public required string Name { get; set; }
         public required string PosterUrl { get; set; }
         public required string ImdbLink { get; set; }
         public required string Genre { get; set; }
