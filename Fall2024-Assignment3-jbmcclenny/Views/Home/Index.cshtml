@@ -4,9 +4,29 @@
 
 <div class="text-center">
     
-    <div class="searchBar">
-        <input type="text" id="movieSearch" placeholder="Search for an actor or movie..." />
-        <button onclick="searchMovie()">Search</button>
-    </div>
+    <h1 class="title">Movie Index</h1>
 
+    <p>
+        Below is a list of movies that have been entered into the database.
+        Click on a title to go to its detail page.
+    </p>
+
+    <!-- Pull in movies from SQL database -->
+    <table class="table">
+        <tbody>
+            @foreach (var item in Model.Movie)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.MovieId">@item.Title</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Buttons to navigate to other pages -->
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+    <a asp-action="Edit" class="btn btn-warning">Edit</a>
+    <a asp-action="Delete" class="btn btn-danger">Delete</a>
 </div>
