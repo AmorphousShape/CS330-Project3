@@ -1,4 +1,4 @@
-@model IEnumerable<ClassDemo.Models.Student>
+@model IEnumerable<Fall2024_Assignment3_jbmcclenny.Models.ActorViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,12 +16,14 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Major)
+                @Html.DisplayNameFor(model => model.HeadshotUrl)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DoB)
+                @Html.DisplayNameFor(model => model.Gender)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -31,10 +33,13 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Major)
+                @Html.DisplayFor(modelItem => item.HeadshotUrl)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DoB)
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

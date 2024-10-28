@@ -1,6 +1,15 @@
 ﻿async function generateReviews(movieId, movieName) {
     const reviews = [];
     for (let i = 0; i < 10; i++) {
+
+        reviews.push({
+            movieId: movieId,
+            reviewId: i + 1,
+            reviewer: `Reviewer ${i + 1}`,
+            rating: Math.random() % 5 + 1,
+            comment: null
+        });
+
         const response = await fetch('OPENAI_API_ENDPOINT', {
             method: 'POST',
             headers: {
@@ -8,20 +17,15 @@
                 'Authorization': `Bearer OPENAI_API_KEY`
             },
             body: JSON.stringify({
-                prompt: `Write a review for movie ${movieName}.`,
+                prompt: `Write a review for movie ${movieName} given a rating of ${reviews[i].rating}.`,
                 max_tokens: 150
             })
         });
+
+        
+
         const data = await response.json();
         const comment = data.choices[0].text.trim();
-
-        reviews.push({
-            movieId: movieId,
-            reviewId: i + 1,
-            reviewer: `Reviewer ${i + 1}`,
-            rating: Math.random() % 5 + 1,
-            comment: comment
-        });
     }
     return reviews;
 }

@@ -1,4 +1,4 @@
-@model IEnumerable<ClassDemo.Models.CourseStudent>
+@model IEnumerable<Fall2024_Assignment3_jbmcclenny.Models.MovieActorViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,10 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Course)
+                @Html.DisplayNameFor(model => model.Movie)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Student)
+                @Html.DisplayNameFor(model => model.Actor)
             </th>
             <th></th>
         </tr>
@@ -25,10 +25,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Course.Name)
+                @Html.DisplayFor(modelItem => item.Movie.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Student.Name)
+                @Html.DisplayFor(modelItem => item.Actor.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
