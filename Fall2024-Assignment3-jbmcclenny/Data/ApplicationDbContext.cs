@@ -11,5 +11,6 @@ namespace Fall2024_Assignment3_jbmcclenny.Data
         }
         public DbSet<MovieViewModel> Movie { get; set; } = default!;
         public DbSet<ActorViewModel> Actor { get; set; } = default!;
+        public DbSet<MovieActorViewModel> MovieActor { get; set; } = default!;
     }
 }

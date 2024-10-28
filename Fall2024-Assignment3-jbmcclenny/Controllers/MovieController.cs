@@ -22,7 +22,16 @@ namespace Fall2024_Assignment3_jbmcclenny.Controllers
         // GET: Movie
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Movie.ToListAsync());
+            try
+            {
+                var movies = await _context.Movie.ToListAsync();
+                return View(movies);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(500, "Internal server error");
+            }
         }
 
         // GET: Movie/Details/5
