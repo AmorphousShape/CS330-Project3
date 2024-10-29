@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Fall2024_Assignment3_jbmcclenny.Models {
+namespace Fall2024_Assignment3_jbmcclenny.Models
+{
     public class ActorViewModel {
 
         [Key]
@@ -13,7 +13,7 @@ namespace Fall2024_Assignment3_jbmcclenny.Models {
         public string? TwitterSentiment { get; set; }
 
         public class TweetModel {
-            
+
             [Key]
             public int Id { get; set; }
             public string? Tweet { get; set; }

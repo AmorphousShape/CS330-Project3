@@ -4,75 +4,78 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1 class="header">Details</h1>
 
 <div>
-    <h4>Movie</h4>
+    <h4 class="subheader">Movie</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PosterUrl)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Model.PosterUrl" alt="Movie Poster" style="max-width: 100px;" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ImdbLink)
-        </dt>
-        <dd class="col-sm-10">
-            <a href="@Model.ImdbLink" target="_blank">@Model.ImdbLink</a>
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Genre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Genre)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ReleaseYear)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ReleaseYear)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ActorsList)
-        </dt>
-        <dd class="col-sm-10">
-            @if (Model.ActorsList != null)
-            {
-                @foreach (var actor in Model.ActorsList)
+    <div class="table">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PosterUrl)
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Model.PosterUrl" alt="Movie Poster" style="max-width: 100px;" />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ImdbLink)
+            </dt>
+            <dd class="col-sm-10">
+                <a href="@Model.ImdbLink" target="_blank">@Model.ImdbLink</a>
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Genre)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Genre)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ReleaseYear)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ReleaseYear)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ActorsList)
+            </dt>
+            <dd class="col-sm-10">
+                @if (Model.ActorsList != null)
                 {
-                    <p>@actor</p>
+                    @foreach (var actor in Model.ActorsList)
+                    {
+                        <p>@actor</p>
+                    }
                 }
-            }
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.GeneralSentiment)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.GeneralSentiment)
-        </dd>
-        <dt class="col-sm-2">
-            Reviews
-        </dt>
-        <dd class="col-sm-10">
-            @if (Model.ReviewsList != null)
-            {
-                @foreach (var review in Model.ReviewsList)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.GeneralSentiment)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.GeneralSentiment)
+            </dd>
+            <dt class="col-sm-2">
+                Reviews
+            </dt>
+            <dd class="col-sm-10">
+                @if (Model.ReviewsList != null)
                 {
-                    <p><strong>@review.Author:</strong> @review.Review</p>
+                    @foreach (var review in Model.ReviewsList)
+                    {
+                        <p><strong>@review.Author:</strong> @review.Review</p>
+                    }
                 }
-            }
-        </dd>
-    </dl>
+            </dd>
+        </dl>
+    </div>
 </div>
-<div>
+
+<div class="footer">
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

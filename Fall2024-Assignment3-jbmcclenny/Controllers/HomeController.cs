@@ -1,6 +1,5 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Fall2024_Assignment3_jbmcclenny.Models;
 
 namespace Fall2024_Assignment3_jbmcclenny.Controllers
