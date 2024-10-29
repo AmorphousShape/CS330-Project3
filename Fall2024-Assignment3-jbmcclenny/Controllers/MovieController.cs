@@ -30,7 +30,7 @@ namespace Fall2024_Assignment3_jbmcclenny.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, $"Internal server error\n{ex.Message}");
             }
         }
 

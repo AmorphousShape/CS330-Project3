@@ -16,6 +16,8 @@ public class MovieViewModel
 
     public class ReviewModel
     {
+        [Key]
+        public int Id { get; set; }
         public string? Author { get; set; }
         public string? Review { get; set; }
     }
