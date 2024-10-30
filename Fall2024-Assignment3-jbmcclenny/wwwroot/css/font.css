@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'BigBlue437Regular';
+    src: url('../font/BigBlueTerminal/BigBlueTerm437NerdFont-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BigBlue437Mono';
+    src: url('../font/BigBlueTerminal/BigBlueTerm437NerdFontMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BigBlue437Propo';
+    src: url('../font/BigBlueTerminal/BigBlueTerm437NerdFontPropo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BigBluePlusRegular';
+    src: url('../font/BigBlueTerminal/BigBlueTermPlusNerdFont-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BigBluePlusMono';
+    src: url('../font/BigBlueTerminal/BigBlueTermPlusNerdFontMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BigBluePlusPropo';
+    src: url('../font/BigBlueTerminal/BigBlueTermPlusNerdFontPropo-Regular.ttf') format('truetype');
+}

@@ -116,6 +116,8 @@ function removeActor(button) {
     container.removeChild(button.parentElement);
 }
 
+
+
 $(document).ready(function () {
 
 
