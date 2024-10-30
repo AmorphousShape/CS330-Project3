@@ -1,0 +1,11 @@
+h1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: lightgrey;
+}
+
+body {
+    background-image: url("../images/bacon.jpg");
+}

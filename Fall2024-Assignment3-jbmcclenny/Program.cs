@@ -41,6 +41,18 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// Redirect 404 to the generic error page
+app.Use(async (context, next) =>
+{
+    await next();
+
+    if (context.Response.StatusCode == 404)
+    {
+        context.Request.Path = "/Home/Error";
+        await next();
+    }
+});
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
