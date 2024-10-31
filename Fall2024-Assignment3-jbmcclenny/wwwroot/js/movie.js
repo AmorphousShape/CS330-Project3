@@ -1,18 +1,6 @@
-async function generateMovieReview() {
-    const response = await fetch('OPENAI_API_ENDPOINT', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer OPENAI_API_KEY`
-        },
-        body: JSON.stringify({
-            prompt: `Write a review for the movie titled "${document.getElementById('Name').value}"`,
-            max_tokens: 150
-        })
-    });
 
-    const data = await response.json();
-    return data.choices[0].text.trim();
+async function generateMovieReview() {
+    
 }
 
 async function generateMovieReviews() {
@@ -34,8 +22,8 @@ async function createMovie() {
         const reviewsJson = JSON.stringify(reviewsList);
         document.getElementById('ReviewsList').value = reviewsJson;
         return true;
-    } catch {
-        console.log('Failed to generate movie reviews');
+    } catch (error) {
+        console.error("Failed to generate movie reviews: ", error.message);
         return false;
     }
 }
