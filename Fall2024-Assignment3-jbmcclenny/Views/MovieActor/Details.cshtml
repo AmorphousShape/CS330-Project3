@@ -8,28 +8,36 @@
     <link rel="stylesheet" href="~/css/movie-actor.css">
 </head>
 
-
-<h1>Details</h1>
-
-<div>
-    <h4>MovieActor</h4>
+<div class="centered-horizontal">
+    <h1 class="header">Connection Details</h1>
+    <br />
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Movie.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Actor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Actor.Name)
-        </dd>
-    </dl>
+    <table class="table inner-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actor)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Movie.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Actor.Name)
+            </td>
+        </tr>
+    </table>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="sidebar">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-mini">Home</a>
+    <hr />
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-mini">Edit</a>
+    <hr />
+    <a asp-controller="Movie" asp-action="Index" class="btn btn-mini">Movie Index</a>
+    <a asp-controller="Actor" asp-action="Index" class="btn btn-mini">Actor Index</a>
+    <a asp-action="Index" class="btn btn-mini">Movie Actors</a>
 </div>

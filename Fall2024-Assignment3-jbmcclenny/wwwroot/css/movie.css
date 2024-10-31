@@ -2,3 +2,13 @@ body {
     background-image: url("../images/movie-background.jpg");
     color:  #bfbfbf;
 }
+
+.poster {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    align-self: center;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+}

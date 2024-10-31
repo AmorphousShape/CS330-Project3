@@ -35,15 +35,7 @@ namespace Fall2024_Assignment3_jbmcclenny.Controllers
                 return NotFound();
             }
 
-            var movies = await _context.MovieActor
-                .Include(ma => ma.Movie)
-                .Where(ma => ma.ActorId == actor.Id)
-                .Select(ma => ma.Movie)
-                .ToListAsync();
-
-            var vm = new ActorDetailViewModel(actor, movies);
-
-            return View(vm);
+            return View(actor);
         }
 
         // GET: Actor/Create
@@ -55,7 +47,7 @@ namespace Fall2024_Assignment3_jbmcclenny.Controllers
         // POST: Actor/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,BirthDate")] ActorViewModel actor, IFormFile? photo)
+        public async Task<IActionResult> Create([Bind("Id,Name,HeadshotUrl,Gender,Age,TwitterSentiment,Tweets")] ActorViewModel actor, IFormFile? photo)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +77,7 @@ namespace Fall2024_Assignment3_jbmcclenny.Controllers
         // POST: Actor/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] ActorViewModel actor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,HeadshotUrl,Gender,Age,TwitterSentiment,Tweets")] ActorViewModel actor)
         {
             if (id != actor.Id)
             {

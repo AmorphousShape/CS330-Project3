@@ -8,32 +8,32 @@
     <link rel="stylesheet" href="~/css/movie.css">
 </head>
 
-<h1 class="header">@Html.DisplayFor(model => model.Name)</h1>
-
-<hr />
-
-<img src=@Model.PosterUrl alt="Movie Poster" class="poster"/>
-<br />
-<a href=@Model.ImdbLink>IMDB</a>
-
-<div class="table">
-    @Html.DisplayNameFor(model => model.Genre) : @Html.DisplayFor(model => model.Genre)
+<div class="centered-horizontal">
+    <h1 class="header">@Html.DisplayFor(model => model.Name)</h1>
+    <br /><hr />
+    <img src=@Model.PosterUrl alt="Movie Poster" class="poster"/>
     <br />
-    @Html.DisplayNameFor(model => model.ReleaseYear) : @Html.DisplayFor(model => model.ReleaseYear)
+    <a href=@Model.ImdbLink class="btn btn-primary">IMDB</a>
     <br />
-</div>
-
-<div class="table">
-    @Html.DisplayNameFor(model => model.GeneralSentiment) : @Html.DisplayFor(model => model.GeneralSentiment)
+    <div class="table inner-table">
+        @Html.DisplayNameFor(model => model.Genre) : @Html.DisplayFor(model => model.Genre)
+        <br />
+        @Html.DisplayNameFor(model => model.ReleaseYear) : @Html.DisplayFor(model => model.ReleaseYear)
+        <br />
+    </div>
     <br />
-    <h3>Reviews</h3>
-    @if (Model.ReviewsList != null)
-    {
-        @foreach (var review in Model.ReviewsList)
+    <div class="table inner-table">
+        @Html.DisplayNameFor(model => model.GeneralSentiment) : @Html.DisplayFor(model => model.GeneralSentiment)
+        <br />
+        <h3>Reviews</h3>
+        @if (Model.ReviewsList != null)
         {
-            <p><strong>@review.Author:</strong> @review.Review</p>
+            @foreach (var review in Model.ReviewsList)
+            {
+                <p>@review.Author: @review.Review</p>
+            }
         }
-    }
+    </div>
 </div>
 
 <div class="sidebar">

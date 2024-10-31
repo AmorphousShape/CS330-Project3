@@ -46,6 +46,8 @@ body {
 .centered-horizontal {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .header {
@@ -64,13 +66,21 @@ body {
 
 .table {
   color: #c9c9c9;
-  background-color: rgba(0,0,0,0.5);
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 1em;
   margin-top: 2vh;
   width: 100%;
+  flex-direction: column;
+}
+
+.inner-table {
+  background-color: rgba(0,0,0,0.5);
+}
+
+tbody td {
+  vertical-align: middle;
 }
 
 .btn {
@@ -95,7 +105,7 @@ body {
 }
 
 .btn-mini {
-  font-size: 1vw;
+  font-size: 1.5vw;
   padding: 0.5vw 1vw;
   border: none;
   border-radius: 5px;
@@ -117,6 +127,21 @@ body {
 .btn:hover {
   transform: scale(1.1);
   transition-duration: 0.3s;
+}
+
+.btn-info {
+  font-size: 1vw;
+  padding: 5px 10px;
+}
+
+.btn-warning {
+  font-size: 1vw;
+  padding: 5px 10px;
+}
+
+.btn-danger {
+  font-size: 1vw;
+  padding: 5px 10px;
 }
 
 .sidebar {
@@ -156,4 +181,12 @@ body {
   display: flex;
   align-items: center;
   align-content: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em;
 }

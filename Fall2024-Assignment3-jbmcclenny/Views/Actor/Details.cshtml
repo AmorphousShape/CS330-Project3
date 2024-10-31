@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="~/css/actor.css">
 </head>
 
-<h1>@Html.DisplayFor(model => model.Name)</h1>
-
-<img src=@Model.HeadshotUrl alt="Headshot" class="img-fluid" />
-
-<div class="table">
-    @Html.DisplayNameFor(model => model.Gender) : @Html.DisplayFor(model => model.Gender)
+<div class="centered-horizontal">
+    <h1 class="header">@Html.DisplayFor(model => model.Name)</h1>
     <br />
-    @Html.DisplayNameFor(model => model.Age) : @Html.DisplayFor(model => model.Age)
+    <img src=@Model.HeadshotUrl alt="Headshot" class="headshot" />
+    <br />
+    <div class="table inner-table">
+        @Html.DisplayNameFor(model => model.Gender) : @Html.DisplayFor(model => model.Gender)
+        <br />
+        @Html.DisplayNameFor(model => model.Age) : @Html.DisplayFor(model => model.Age)
+    </div>
 </div>
 
 <div class="sidebar">

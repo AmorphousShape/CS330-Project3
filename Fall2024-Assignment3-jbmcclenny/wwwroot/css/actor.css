@@ -2,3 +2,12 @@ body {
     background-image: url("../images/actor-background.jpg");
     color:  #bfbfbf;
 }
+
+.headshot {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    align-self: center;
+    border-radius: 10px;
+}
+
