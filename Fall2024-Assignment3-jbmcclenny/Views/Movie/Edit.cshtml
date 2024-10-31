@@ -10,67 +10,45 @@
 
 <h1 class="header">Edit</h1>
 
-<h4 class="subheader">Movie</h4>
 <hr />
 
 <div class="table">
     <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Edit">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="Id" />
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="PosterUrl" class="control-label"></label>
-                    <input asp-for="PosterUrl" class="form-control" />
-                    <span asp-validation-for="PosterUrl" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ImdbLink" class="control-label"></label>
-                    <input asp-for="ImdbLink" class="form-control" />
-                    <span asp-validation-for="ImdbLink" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Genre" class="control-label"></label>
-                    <input asp-for="Genre" class="form-control" />
-                    <span asp-validation-for="Genre" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ReleaseYear" class="control-label"></label>
-                    <input asp-for="ReleaseYear" class="form-control" />
-                    <span asp-validation-for="ReleaseYear" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ActorsList" class="control-label"></label>
-                    <div id="actors-list-container">
-                        @for (int i = 0; i < Model.ActorsList.Count; i++)
-                        {
-                            <div class="actor-item">
-                                <input asp-for="ActorsList[i]" class="form-control" />
-                                <button type="button" class="btn btn-danger" onclick="removeActor(this)">Remove</button>
-                                <span asp-validation-for="ActorsList[i]" class="text-danger"></span>
-                            </div>
-                        }
-                    </div>
-                    <button type="button" class="btn btn-secondary" onclick="addActor()">Add Actor</button>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
-                </div>
-            </form>
-        </div>
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PosterUrl" class="control-label"></label>
+                <input asp-for="PosterUrl" class="form-control" />
+                <span asp-validation-for="PosterUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImdbLink" class="control-label"></label>
+                <input asp-for="ImdbLink" class="form-control" />
+                <span asp-validation-for="ImdbLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseYear" class="control-label"></label>
+                <input asp-for="ReleaseYear" class="form-control" />
+                <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
 </div>
 
-<div class="footer">
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<div class="sidebar">
+    <a asp-action="Index">Cancel Edit</a>
 </div>

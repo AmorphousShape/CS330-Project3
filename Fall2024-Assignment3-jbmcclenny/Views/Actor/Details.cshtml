@@ -8,39 +8,22 @@
     <link rel="stylesheet" href="~/css/actor.css">
 </head>
 
-<h1>Details</h1>
+<h1>@Html.DisplayFor(model => model.Name)</h1>
 
-<div>
-    <h4>Actor</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HeadshotUrl)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Model.HeadshotUrl" alt="Headshot" class="img-fluid" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-    </dl>
+<img src=@Model.HeadshotUrl alt="Headshot" class="img-fluid" />
+
+<div class="table">
+    @Html.DisplayNameFor(model => model.Gender) : @Html.DisplayFor(model => model.Gender)
+    <br />
+    @Html.DisplayNameFor(model => model.Age) : @Html.DisplayFor(model => model.Age)
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Name">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="sidebar">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-mini">Home</a>
+    <hr />
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-mini">Edit</a>
+    <hr />
+    <a asp-controller="Movie" asp-action="Index" class="btn btn-mini">Movie Index</a>
+    <a asp-action="Index" class="btn btn-mini">Actor Index</a>
+    <a asp-controller="MovieActor" asp-action="Index" class="btn btn-mini">Movie Actors</a>
 </div>

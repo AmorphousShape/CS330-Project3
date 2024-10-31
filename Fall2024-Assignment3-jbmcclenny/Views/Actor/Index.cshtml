@@ -10,9 +10,6 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -54,3 +51,11 @@
 }
     </tbody>
 </table>
+
+<div class="sidebar">
+    <a asp-action="Create" class="btn btn-mini">Create New</a>
+    <hr />
+    <a asp-controller="Home" asp-action="Index" class="btn btn-mini">Home</a>
+    <a asp-controller="Movie" asp-action="Index" class="btn btn-mini">Movie Index</a>
+    <a asp-controller="MovieActor" asp-action="Index" class="btn btn-mini">Movie Actors</a>
+</div>

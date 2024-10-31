@@ -58,7 +58,7 @@ namespace Fall2024_Assignment3_jbmcclenny.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] MovieViewModel movie)
+        public async Task<IActionResult> Create([Bind("Id,Name,PosterUrl,ImdbLink,Genre,ReleaseYear,GeneralSentiment,ReviewsList")] MovieViewModel movie)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Fall2024_Assignment3_jbmcclenny.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] MovieViewModel movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,PosterUrl,ImdbLink,Genre,ReleaseYear,GeneralSentiment,ReviewsList")] MovieViewModel movie)
         {
             if (id != movie.Id)
             {

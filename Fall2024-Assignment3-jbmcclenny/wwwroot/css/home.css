@@ -25,20 +25,8 @@ body {
 .button-panel {
     margin: 10vh;
     padding: 20px;
-}
-
-.btn {
-    font-size: 2vw;
-    padding: 1vw 2vw;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.2s;
-    color: #a4a4a4;
-    background-color: #8e1717;
-}
-
-.btn:hover {
-    transform: scale(1.1);
-    background-color: #6b1111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }

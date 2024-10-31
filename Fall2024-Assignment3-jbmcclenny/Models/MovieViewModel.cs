@@ -11,7 +11,6 @@ public class MovieViewModel
     public string? ImdbLink { get; set; }
     public string? Genre { get; set; }
     public string? ReleaseYear { get; set; }
-    public List<string>? ActorsList { get; set; }
     public string? GeneralSentiment { get; set; }
 
     public class ReviewModel

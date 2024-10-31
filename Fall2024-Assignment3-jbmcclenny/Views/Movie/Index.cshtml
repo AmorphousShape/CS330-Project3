@@ -10,10 +10,6 @@
 
 <h1 class="header">Index</h1>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
-</p>
-
 @if (!Model.Any())
 {
     <p>No movies available.</p>
@@ -21,14 +17,7 @@
 else
 {
     <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
+        <thead></thead>
         <tbody>
         @foreach (var item in Model) {
             <tr>
@@ -44,4 +33,12 @@ else
         }
         </tbody>
     </table>
+
+    <div class="sidebar">
+        <a asp-action="Create" class="btn btn-mini">Create Movie</a>
+        <hr />
+        <a asp-controller="Home" asp-action="Index" class="btn btn-mini">Home</a>
+        <a asp-controller="Actor" asp-action="Index" class="btn btn-mini">Actor Index</a>
+        <a asp-controller="MovieActor" asp-action="Index" class="btn btn-mini">Movie Actors</a>
+    </div>
 }

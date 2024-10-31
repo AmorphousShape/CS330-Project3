@@ -8,54 +8,50 @@
     <link rel="stylesheet" href="~/css/movie.css">
 </head>
 
-<h1 class="header">Create</h1>
+<h1 class="header">Create Movie</h1>
 
-<h4 class="subheader">Movie</h4>
 <hr />
 <div class="table">
     <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Create">
-                @Html.AntiForgeryToken()
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                <label asp-for="PosterUrl" class="control-label"></label>
-                <input asp-for="PosterUrl" class="form-control" />
-                <span asp-validation-for="PosterUrl" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                <label asp-for="ImdbLink" class="control-label"></label>
-                <input asp-for="ImdbLink" class="form-control" />
-                <span asp-validation-for="ImdbLink" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                <label asp-for="Genre" class="control-label"></label>
-                <input asp-for="Genre" class="form-control" />
-                <span asp-validation-for="Genre" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                <label asp-for="ReleaseYear" class="control-label"></label>
-                <input asp-for="ReleaseYear" class="form-control" />
-                <span asp-validation-for="ReleaseYear" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
-            </form>
-        </div>
+        <form asp-action="Create" onsubmit="return createMovie()">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="PosterUrl" class="control-label"></label>
+            <input asp-for="PosterUrl" class="form-control" />
+            <span asp-validation-for="PosterUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="ImdbLink" class="control-label"></label>
+            <input asp-for="ImdbLink" class="form-control" />
+            <span asp-validation-for="ImdbLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="Genre" class="control-label"></label>
+            <input asp-for="Genre" class="form-control" />
+            <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="ReleaseYear" class="control-label"></label>
+            <input asp-for="ReleaseYear" class="form-control" />
+            <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+            </div>
+            <div class="form-group centered-horizontal">
+            <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
 </div>
 
-<div class="footer">
-    <a asp-controller="Home" asp-action="Index">Back to Home</a>
-    <a asp-controller="Movie" asp-action="Index">Back to List</a>
+<div class="sidebar">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-mini">Home</a>
+    <hr />
+    <a asp-controller="Movie" asp-action="Index" class="btn btn-mini">Movie Index</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<script src="~/js/movie.js"></script>
